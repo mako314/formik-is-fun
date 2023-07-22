@@ -39,8 +39,54 @@ function CarForm({addCar}){
 
 
     return(
-        <div>
+        <div className="form-container">
+            <form className="form" onSubmit={formik.handleSubmit}>
+                <div className="signup-form">
+                    {/* display errors from formik/yup */}
+                    { formik.errors && Object.values(formik.errors).map(e => <p>{e}</p>) }
+                    
+                    <div className="submit-form"> 
+                    <label>Make</label>
+                    <input
+                        type="text"
+                        name="make"
+                        value={formik.values.make}
+                        onChange={formik.handleChange}
+                    />
+                    </div>
 
+                    <div className="submit-form"> 
+                    <label>Model</label>
+                    <input
+                        type="text"
+                        name="model"
+                        value={formik.values.model}
+                        onChange={formik.handleChange}
+                    />
+                    </div>
+                    
+                    <div className="submit-form"> 
+                    <label>Year</label>
+                    <input
+                        type="text"
+                        name="year"
+                        value={formik.values.year}
+                        onChange={formik.handleChange}
+                    />
+                    </div>
+                    
+                    <div className="submit-form"> 
+                    <label>Price</label>
+                    <input
+                        type="text"
+                        name="price"
+                        value={formik.values.price}
+                        onChange={formik.handleChange}
+                    />
+                    </div>
+                </div>
+                <input type='submit' className="submit-btn"/>
+            </form>
         </div>
     )
 }
