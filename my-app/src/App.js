@@ -17,10 +17,28 @@ function App() {
     setCars(cars => [...cars, car])
   }
 
+  const mappedCars = cars.map((car) => {
+    <div>
+      <p>
+        {car.make}
+      </p>
+      <p>
+        {car.model}
+      </p>
+      <p>
+        {car.year}
+      </p>
+      <p>
+        ${car.price}
+      </p>
+    </div>
+  })
+
 
   return (
     <div className="App">
         <Route path='/' element={<FormComponent addCar={addCar}/>} />
+        {mappedCars}
     </div>
   );
 }
