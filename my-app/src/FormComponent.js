@@ -11,9 +11,10 @@ function CarForm({addCar}){
     //This formSchema comes from yup, it's a way to require certain parts of the form to be filled. In our case, we'll use it to require a positive price, and a model.
     const formSchema = object({
         model: string().required('Please enter a model'),
-        price: number().positive().required('You must enter a positive price.'),
+        price: number().positive().required('You CANNOT include a comma, and you must enter a positive price.'),
     })
 
+    // You need to set initial values and pass an object to formik by using useFormik ({})
     const formik = useFormik({
         initialValues: {
             make: '',
