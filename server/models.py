@@ -14,6 +14,6 @@ class Car(db.Model, SerializerMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     make = db.Column(db.String)
-    model = db.Column(db.Integer)
-    year = db.Column(db.String)
-    price = db.Column(db.String)
+    model = db.Column(db.String)
+    year = db.Column(db.Integer)
+    price = db.Column(db.Integer)
