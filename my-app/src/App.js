@@ -14,7 +14,6 @@ function App() {
         setCars(data)
       })
   }, [])
-  console.log(cars)
 
   //This updates our list of cars. By doing the setter and spreading the cars and then adding one, we have an updated array list
   const addCar = (car) => {
