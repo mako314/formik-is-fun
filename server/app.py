@@ -38,7 +38,7 @@ class Cars(Resource):
         new_car = Car(
             make = data['make'],
             model = data['model'],
-            year = data['data'],
+            year = data['year'],
             price = data['price']
         )
 
