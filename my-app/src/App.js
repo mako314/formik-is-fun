@@ -13,27 +13,23 @@ function App() {
         setCars(data)
       })
   }, [])
+  console.log(cars)
 
   const addCar = (car) => {
     setCars(cars => [...cars, car])
   }
 
   const mappedCars = cars.map((car) => {
+    return(
     <div>
       <p>
-        {car.make}
-      </p>
-      <p>
-        {car.model}
-      </p>
-      <p>
-        {car.year}
-      </p>
-      <p>
-        ${car.price}
+        {car.make} {car.model} {car.year} ${car.price}
       </p>
     </div>
+    )
   })
+
+  console.log(mappedCars)
 
 
   return (
