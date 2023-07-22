@@ -1,5 +1,5 @@
 from app import app
-from models import Car
+from models import db, Car
 
 if __name__ == '__main__':
     with app.app_context():
@@ -7,6 +7,7 @@ if __name__ == '__main__':
         print("Clearing db...")
         Car.query.delete()
 
+        print("Seeding your Car db...")
         cars = [
             Car(
                 make = "Ford",
@@ -27,7 +28,7 @@ if __name__ == '__main__':
                 price = 15000
             )
         ]
-    # make = db.Column(db.String)
-    # model = db.Column(db.Integer)
-    # year = db.Column(db.String)
-    # price = db.Column(db.String)
+
+        db.session.add_all(cars)
+        db.session.commit()
+        print("Seeding completed!")
