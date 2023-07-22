@@ -31,8 +31,6 @@ function App() {
     )
   })
 
-  console.log(mappedCars)
-
 
   return (
     <div className="App">
